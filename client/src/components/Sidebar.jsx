@@ -29,9 +29,10 @@ const Sidebar = ({ sidebar, setSidebar }) => {
 
   return (
     <div
-      className={`w-30 border-r bg-gray-800 border-slate-300 flex flex-col z-40 justify-between items-center max-sm:absolute top-14 bottom-0 ${
-        sidebar ? "translate-x-0" : "max-sm:-translate-x-full"
-      } transition-all duration-300 ease-in-out`}
+      className={`w-60 border-r fixed top-[53px] left-0 bottom-0 bg-gray-800 border-slate-300  
+    flex flex-col z-40 justify-between overflow-y-auto
+    ${sidebar ? "translate-x-0" : "max-sm:-translate-x-full"} 
+    transition-all duration-300 ease-in-out`}
     >
       <div className="my-7 w-full">
         <img
@@ -80,18 +81,28 @@ const Sidebar = ({ sidebar, setSidebar }) => {
       </div>
 
       <div className="w-full border-t border-slate-300 p-4 px-7 flex items-center justify-between">
-         <div onClick={openUserProfile} className="flex gap-2 items-center cursor-pointer">
-           <img src={user.imageUrl} alt="" className="w-8 rounded-full " />
-           <div>
-            <h1 className="text-sm font-medium text-secondary">{user.fullName}</h1>
+        <div
+          onClick={openUserProfile}
+          className="flex gap-2 items-center cursor-pointer"
+        >
+          <img src={user.imageUrl} alt="" className="w-8 rounded-full " />
+          <div>
+            <h1 className="text-sm font-medium text-secondary">
+              {user.fullName}
+            </h1>
             <p className="text-xs text-secondary">
-               <Protect plan='premium' fallback='Free'>Premium</Protect>
-               Plan
+              <Protect plan="premium" fallback="Free">
+                Premium
+              </Protect>
+              Plan
             </p>
-           </div>
-         </div>
+          </div>
+        </div>
 
-         <LogOut onClick={signOut} className="w-4.5 text-secondary hover:text-gray-400 transition cursor-pointer"/>
+        <LogOut
+          onClick={signOut}
+          className="w-4.5 text-secondary hover:text-gray-400 transition cursor-pointer"
+        />
       </div>
     </div>
   );
