@@ -160,7 +160,7 @@ const RemoveObject = () => {
 
         {!content ? (
           <div className="flex-1 flex justify-center items-center">
-            <p className="text-sm text-black">Upload an image and click "Remove object"</p>
+            <p className="text-sm text-center text-black">Upload an image and click "Remove object"</p>
           </div>
         ) : (
           <div className="mt-3 flex flex-col">

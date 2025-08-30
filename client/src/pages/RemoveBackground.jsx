@@ -149,7 +149,7 @@ const RemoveBackground = () => {
 
         {!content ? (
           <div className="flex-1 flex justify-center items-center">
-            <p className="text-sm text-black">Upload an image and click "Remove Background"</p>
+            <p className="text-sm text-center text-black">Upload an image and click "Remove Background"</p>
           </div>
         ) : (
           <div className="mt-3 flex flex-col">
